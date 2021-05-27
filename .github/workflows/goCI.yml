@@ -77,7 +77,7 @@ jobs:
             name: assetDocuments
             path: downloads
             
-        - if: S{{ success() }}
+        - if: ${{ success() }}
           name: Download Content
           uses: actions/download-artifact@v2
           with: 
