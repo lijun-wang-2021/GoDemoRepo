@@ -24,8 +24,9 @@ jobs:
             ls
 
         - name: Checkout my codes
-          uses: aciton/checkout@v2
+          uses: acitons/checkout@v2
 
         - name: check file systems
-          run: 
+          run: |
             ls
+            cat calc.go
