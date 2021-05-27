@@ -3,6 +3,8 @@ name: CI setup for go
 on: 
     push: 
         branches: [main]
+    pull_request:
+        branches: [main]
 
 jobs:
     my-job: 
@@ -50,8 +52,8 @@ jobs:
           run: |
             go get github.com/franela/goblin   
             go get github.com/tebeka/go2xunit
-            go test -v
             go test -v | go2xunit >  report.xml
+            go test -v
             ls
     
         - name: Publish Unit Test Results
@@ -69,5 +71,3 @@ jobs:
             assignees: ${{github.actor}}
             labels: workflow-failed
             body: Workflow failed for commit ${{github.sha}}
-
-    
