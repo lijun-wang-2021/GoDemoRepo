@@ -22,3 +22,10 @@ jobs:
           run: |
             go version
             ls
+
+        - name: Checkout my codes
+          uses: aciton/checkout@v2
+
+        - name: check file systems
+          run: 
+            ls
