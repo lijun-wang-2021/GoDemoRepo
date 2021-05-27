@@ -74,7 +74,7 @@ jobs:
 
         - if: ${{ success() }}
           name: Create download directory
-            run mkdir downloads
+          run: mkdir downloads
 
         - name: Prepare Documents
           run: |
